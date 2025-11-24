@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>ISSUE TRACKER</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body class="flex items-center justify-center bg-gray-100">
+
+    <div id="login" class="w-full max-w-[300px] bg-white p-5 rounded shadow">
+        <form id="login-form" class="flex flex-col">
+            <h2 class="text-center text-2xl font-bold mb-4">Login</h2>
+            <label for="login-email">Email</label>
+            <input type="text" id="login-email" placeholder="Email" class="input-field">
+
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" placeholder="Password" class="input-field">
+
+            <button id="login-btn" type="submit"
+                class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700 p-2 m-2">Log in</button>
+        </form>
+    </div>
+
+    <div id="login-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <p id="login-modal-message"></p>
+            <br>
+            <button id="login-modal-confirm-btn" class="confirm-modal">Sí</button>
+            <button id="login-modal-cancel-btn" class="cancel-modal">No</button>
+        </div>
+    </div>
+
+    <div id="asign-edit-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div id="modal-div"></div>
+            <button id="save-btn" class="confirm-modal">Aceptar</button>
+            <button id="cancel-btn-modal" class="cancel-modal">Cancelar</button>
+        </div>
+    </div>
+
+    <div id="task-info" class="modal" style="display: none;">
+
+    </div>
+
+    <div id="report-modal" class="modal" style="display: none;">
+        <div class="modal-content" id="report-content">
+        </div>
+    </div>
+
+    <div id="message" class="modal" style="display: none;">
+        <div class="modal-content">
+        </div>
+    </div>
+
+    <div class="container" id="main-app" style="display: none;">
+        <div>
+            <nav id="navbar" class="flex justify-between items-center p-4 bg-gray-800 text-white shadow-lg">
+
+            </nav>
+        </div>
+        <div class="flex bg-white" id="content-main">
+            <div id="CRUD-info">
+                <div id="task-form-user-list">
+                    <div id="task-form" class="border rounded p-5 flex-shrink-0 " style="max-width: 350px;">
+                        <h2 class="text-center bold">Task</h2>
+                        <form id="task-form-element" class="max-w-md mx-auto d-flex">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" placeholder="Subject" class="form-control">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea id="description" placeholder="Description" class="form-control"
+                                rows="3"></textarea>
+                            <label for="priority" class="form-label">Priority</label>
+                            <select id="priority" class="form-control mb-3">
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                            <br>
+                            <div class="flex justify-center mt-4 w-full">
+                                <button id="submit-task" type="submit" class="btn btn-primary mr-3">Save</button>
+                                <button type="button" class="cancel-btn btn btn-secondary">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <div id="content-users" class="mt-4">
+
+                    <table id="user-table" class="table">
+                        <thead>
+                            <tr>
+                                <th>Users</th>
+                            </tr>
+                        </thead>
+                        <tbody id="user-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="content" class="p-3">
+                <div class="container my-4">
+                    <div class="row">
+                        <div class="col-sm-8" style="width: 100%;">
+
+                            <div class="flex justify-between items-center mb-4">
+                                <div id="filter-tasks">
+                                </div>
+                            </div>
+
+                            <div id="content-tasks">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>New</th>
+                                            <th>In Progress</th>
+                                            <th>Testing</th>
+                                            <th>Done</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="task-table-body">
+                                        <tr>
+                                            <td id="created" class="dropzone"></td>
+                                            <td id="in-progress" class="dropzone"></td>
+                                            <td id="testing" class="dropzone"></td>
+                                            <td id="done" class="dropzone"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
